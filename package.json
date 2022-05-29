@@ -1,0 +1,12 @@
+{
+  "name": "vosk-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "py asr.py"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
