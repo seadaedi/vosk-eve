@@ -2,7 +2,8 @@ from vosk import Model , KaldiRecognizer
 
 import pyttsx3
 import pyaudio
-import mytools
+# from mytools import Analyze
+import ast
 engine = pyttsx3.Engine()
 
 bufferSize = 16000
@@ -25,7 +26,9 @@ while True :
     data = stream.read(2048,False)
     if walle.AcceptWaveform(data):
         text = walle.Result()
-        print(mytools.Analyze(text))
+        text = ast.literal_eval(text)["text"]
+        print(text)
+        # print(Analyze(text))
 
         # engine.say(text)
         # engine.runAndWait()

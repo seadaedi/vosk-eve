@@ -1,19 +1,22 @@
-import nltk 
-import ast
-from nltk.tokenize import word_tokenize
+
+from pattern.text.en import parse, Sentence
 
 
 @staticmethod
-def Analyze(result):
-    # result = ast.literal_eval(sent)
-    # result = result["text"]
-    print(result)
-    tokens =  word_tokenize(result)
-    tagged  =  nltk.pos_tag(tokens,tagset="universal")
-    # return nltk.chunk.ne_chunk(tagged)
-    return tagged
+def Analyze(txt):
+    parsed = parse(txt)
+    result = Sentence(parsed)
+    cmd = ""
+    for ch in result.chunk:
+        cmd += ch.string+" "
+
+    return cmd
 
 
 @staticmethod
 def log(*vals):
     print(vals)
+
+
+# @staticmethod
+# def SpacyAnalze() :
