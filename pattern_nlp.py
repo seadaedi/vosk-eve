@@ -1,27 +1,27 @@
 
 
+from pattern.text.en import parse, Sentence, mood, suggest, tag, parsetree, pprint, tree
 
 
+txt = "does it raining outside"
+parsed = parse(txt, relations=True, tokenize=True, lemmata=True)
+result = Sentence(parsed)
+cmd = ""
+for ch in result.chunk:
+    cmd += ch.string+" "
 
-from pattern.text.en import  parse , Sentence , mood  , suggest , tag , parsetree ,pprint ,tree
-
-
-txt = "tak me to the bathroom"
-parsed = parse(txt)
-result= Sentence(parsed)
-cmd = "";
-for ch in result.chunk :
-    cmd+=ch.string+" "
-
-# print(mood(result))
+print(mood(result))
 print(cmd)
+print(result.chunk)
+print(result.objects)
+print(result.subjects)
 
-#END REGION
+# END REGION
 
 
 # parsed = parse(txt)
 
-# parsed = parse(txt)       
+# parsed = parse(txt)
 
 # result= Sentence(parsed)
 # cmd = "";
@@ -49,7 +49,6 @@ print(cmd)
 # #     # print(tag_w[0],wordnet.synsets(tag_w[0],tag_w[1]))
 
 
-
 # print(words)
 # ch = PNPChunk(txt,words)
 # print(words)
@@ -75,8 +74,3 @@ print(cmd)
 
 # # pprint(parse(sent))
 # # print(suggest("wal"))
-
-
-
-
-

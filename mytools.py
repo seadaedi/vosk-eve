@@ -3,7 +3,7 @@ from pattern.text.en import parse, Sentence
 
 
 @staticmethod
-def Analyze(txt):
+def Analyze(txt) :
     parsed = parse(txt)
     result = Sentence(parsed)
     cmd = ""
